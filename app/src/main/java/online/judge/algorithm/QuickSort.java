@@ -6,15 +6,32 @@ package online.judge.algorithm;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] intArr = {10,5,4,9,3,7,6,1,2,8};
-        int pivot_right;
-        int pivot_left;
-        for(int i=0;i<intArr.length-1;i++){
-            pivot_right = i;
-            pivot_left = i;
+        int[] intArr = {5,3,8,4,9,1,6,2,7,};
+        int pivot = 0;
 
+        int lo = 1;
+        int hi = intArr.length - 1;
 
+        while (intArr[pivot] > intArr[lo]){
+            lo++;
+        }
+        while(intArr[pivot] < intArr[hi]){
+            hi++;
+        }
+
+        int temp = intArr[lo];
+        intArr[lo] = intArr[hi];
+        intArr[hi] = temp;
+
+        if(lo >= hi){
 
         }
+
     }
+
+    private static void quickSort(int[] intArr) {
+
+    }
+
+
 }
