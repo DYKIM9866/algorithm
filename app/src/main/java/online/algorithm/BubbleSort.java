@@ -1,4 +1,4 @@
-package online.judge.algorithm;
+package online.algorithm;
 
 /**
  * 버블정렬
