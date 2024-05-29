@@ -1,36 +1,50 @@
 package online.algorithm;
 
+import java.lang.annotation.IncompleteAnnotationException;
+import java.util.Scanner;
+
 /**
  * 퀵 정렬
  * 미완 어려움..
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] intArr = {5,3,8,4,9,1,6,2,7,};
-        int pivot = 0;
-
-        int lo = 1;
-        int hi = intArr.length - 1;
-
-        while (intArr[pivot] > intArr[lo]){
-            lo++;
-        }
-        while(intArr[pivot] < intArr[hi]){
-            hi++;
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scan.nextInt();
         }
 
-        int temp = intArr[lo];
-        intArr[lo] = intArr[hi];
-        intArr[hi] = temp;
+        quickSort(arr, 0, arr.length-1);
 
-        if(lo >= hi){
-
+        for(int x : arr){
+            System.out.print(x + " ");
         }
-
     }
 
-    private static void quickSort(int[] intArr) {
+    private static void quickSort(int[] intArr,int start,int end) {
+        if(start >= end) return;
 
+        int pivot = start;
+        int low = start + 1;
+        int high = end;
+
+        while(high >= low){
+            while(low <= end && intArr[low] <= intArr[pivot]) low ++;
+            while(high > start && intArr[high] >= intArr[pivot]) high--;
+
+            if(low > high) swap(intArr, high, pivot);
+            else swap(intArr, low, high);
+        }
+
+        quickSort(intArr, start, high-1);
+        quickSort(intArr, high+1, end);
+    }
+    private static void swap(int[] intArr, int i, int j) {
+        int temp = intArr[i];
+        intArr[i] = intArr[j];
+        intArr[j] = temp;
     }
 
 
