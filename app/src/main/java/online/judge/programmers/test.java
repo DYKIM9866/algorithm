@@ -6,32 +6,12 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) throws IOException {
-        Solution sol = new Solution();
-
-        System.out.println(sol.solution(new int[]{1, 3, 2},
-                new String[]{"diamond", "diamond", "diamond", "iron",
-                        "iron", "diamond", "iron", "stone"}));
-
-        System.out.println(sol.solution(new int[]{0, 1, 1},
-                new String[]{"diamond", "diamond", "diamond", "diamond", "diamond"
-                        , "iron", "iron", "iron", "iron", "iron", "diamond"}));
-
-        System.out.println(sol.solution(new int[]{1,1,0},
-                new String[]{"iron", "iron", "iron", "iron", "diamond"
-                        , "diamond", "diamond", "diamond", "diamond", "diamond"}));
-
-        System.out.println(sol.solution(new int[]{2,1,0},
-                new String[]{"diamond","diamond","diamond","diamond","diamond"
-                            , "iron", "iron", "iron", "iron", "iron"
-                            , "stone", "stone", "stone", "stone", "stone"}));
-
-        System.out.println(sol.solution(new int[]{1,1,0},
-                new String[]{"stone", "stone", "iron", "stone", "diamond"
-                        , "diamond", "diamond", "diamond", "diamond", "diamond"}));
-
-        System.out.println(sol.solution(new int[]{1,0,1},
-                new String[]{"iron", "iron", "iron", "iron", "diamond"
-                        , "diamond", "diamond"}));
+        Deque<Integer> que = new ArrayDeque<>();
+        que.offer(1);
+        que.offer(2);
+        que.offer(3);
+        System.out.println(que.pollFirst());
+        System.out.println(que.pollLast());
     }
 }
 
