@@ -13,16 +13,17 @@ public class SelectSort {
         }
         System.out.println();
 
-        for(int i=0;i<intArr.length;i++){
-            int min = 999; //최대값
+        for(int i=0;i<intArr.length-1;i++){
+            int idx = i;
             for(int j=i;j<intArr.length;j++){
-                if(intArr[j] < min){
-                    min = intArr[j];
-                    int temp = intArr[i];
-                    intArr[i] = intArr[j];
-                    intArr[j] = temp;
+                if(intArr[idx] > intArr[j]){
+                    idx = j;
                 }
             }
+
+            int temp = intArr[i];
+            intArr[i] = intArr[idx];
+            intArr[idx] = temp;
         }
 
         for(int a : intArr){
