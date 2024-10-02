@@ -11,7 +11,6 @@ public class 유효한_팰린드롬 {
     }
 
     private static String mySol(String str) {
-        String result = "";
         char[] charArray = str.toCharArray();
         int lt = 0;
         int rt = charArray.length-1;
@@ -30,6 +29,8 @@ public class 유효한_팰린드롬 {
                 rt--;
             }
         }
+
+        String result = "";
 
         if(str.equalsIgnoreCase(String.valueOf(charArray))){
             result = "YES";
