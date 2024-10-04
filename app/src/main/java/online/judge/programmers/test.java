@@ -6,12 +6,13 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) throws IOException {
-        Deque<Integer> que = new ArrayDeque<>();
-        que.offer(1);
-        que.offer(2);
-        que.offer(3);
-        System.out.println(que.pollFirst());
-        System.out.println(que.pollLast());
+
+        Map<int[], Integer> map = new HashMap<>();
+        map.put(new int[]{1,2}, 1);
+        map.put(new int[]{2,3}, 2);
+        map.put(new int[]{3,4}, 3);
+
+
     }
 }
 
