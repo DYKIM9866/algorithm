@@ -27,7 +27,7 @@ public class No25304 {
         if(total == sum){
             System.out.println("Yes");
         }else{
-            System.out.println("No");
+            System.out.println("No2665");
         }
 
 
