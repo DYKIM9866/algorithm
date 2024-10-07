@@ -29,6 +29,7 @@ public class No17182 {
             for (int j = 0; j < n; j++) {   //출발
                 for (int l = 0; l < n; l++) {   //도착
                     if (j == l) continue;
+                    //j에서 l로 가는 것 보다 j에서 i 또 i에서 l로 가는게 더 빠를경우
                     if (graph[j][l] > graph[j][i] + graph[i][l]) {
                         graph[j][l] = graph[j][i] + graph[i][l];
                     }
