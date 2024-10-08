@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * 가장 긴 감소하는 부분 수열
+ * 가장 긴 증가하는 부분 수열
  * 실버 2
  */
-public class No11722 {
+public class No11053 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -21,23 +21,25 @@ public class No11722 {
         }
 
         int idx = 0;
-        int[] lds = new int[n];
-        lds[0] = arr[0];
+        int[] lis = new int[n];
+        lis[0] = arr[0];
+
         for (int i = 1; i < n; i++) {
-            if(lds[idx] > arr[i]){
-                lds[++idx] = arr[i];
+            int temp = arr[i];
+            if(lis[idx] < temp){
+                lis[++idx] = temp;
             }else{
                 int lt = 0;
                 int rt = idx;
                 while(lt < rt){
-                    int mid = (lt + rt) / 2;
-                    if(lds[mid] > arr[i]){
+                    int mid = (lt + rt)/2;
+                    if(lis[mid] < temp){
                         lt = mid + 1;
                     }else{
                         rt = mid;
                     }
                 }
-                lds[rt] = arr[i];
+                lis[rt] = temp;
             }
         }
 
