@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * 키 순서
  * 골드 4
- * 플로이드 마샬
+ * 플로이드 워샬
  */
 public class No2458 {
     public static void main(String[] args) throws IOException {
