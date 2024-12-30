@@ -32,6 +32,7 @@ public class No2665 {
     }
 
     private static int bfs(int[][] room, int n) {
+
         Queue<int[]> que = new ArrayDeque<>();
         int[][] visited = new int[n][n];
         for (int i = 0; i < n; i++) {
@@ -48,12 +49,14 @@ public class No2665 {
                 int ny = current[1] + dy[i];
                 if(nx < 0 || ny < 0 || nx >= n || ny >= n) continue;
 
+                //방문 할 곳이 현재 검은 방보다 크면 갱신
                 if(current[2] < visited[nx][ny]){
                     visited[nx][ny] = current[2];
                 }else {
                     continue;
                 }
 
+                //다음 방문 할 방이 검은 방이면 1추가
                 if(room[nx][ny] == 0){
                     que.offer(new int[]{nx,ny,current[2] + 1});
                 }else{
@@ -64,6 +67,4 @@ public class No2665 {
 
         return visited[n-1][n-1];
     }
-
-
 }

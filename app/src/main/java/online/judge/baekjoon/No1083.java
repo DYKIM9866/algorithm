@@ -20,6 +20,10 @@ public class No1083 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        int s = Integer.parseInt(br.readLine());
+
+        
+
         
     }
 }

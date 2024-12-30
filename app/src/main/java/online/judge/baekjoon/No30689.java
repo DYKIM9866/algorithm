@@ -126,6 +126,7 @@ public class No30689 {
     }
 
     private static int getDirection(char d) {
+        int x = 0;
         switch (d) {
             case 'U': return 0;
             case 'R': return 1;
